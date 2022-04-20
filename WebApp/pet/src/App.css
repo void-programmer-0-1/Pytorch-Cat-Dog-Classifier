@@ -1,0 +1,60 @@
+
+#brand-name{
+    font-weight: bold;
+    color: white;
+    font-size: x-large;
+}
+
+#app-details{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#app-name h1{
+    font-weight: bold;
+    font-size: 40px;
+}
+
+#canvas-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#canvas-container canvas{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
+}
+
+#predict-btn{
+    background-color: black;
+    padding: 15px;
+}
+
+#result-area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+body{
+    margin-bottom: 50px;
+}
+
+#prediction-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+input[type="file"]::file-selector-button{
+    background-color: black;
+    color: white;
+    padding: 12px;
+}

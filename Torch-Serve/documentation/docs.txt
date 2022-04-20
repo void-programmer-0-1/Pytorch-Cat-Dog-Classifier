@@ -1,0 +1,4 @@
+
+command to check the ports that are occupied in linux (Ubuntu)
+sudo lsof -i -P -n | grep LISTEN
+
