@@ -2,7 +2,7 @@ import { Tensor } from 'onnxruntime-web';
 
 export default  function Preprocessing(CanvasRef){
 
-    const [redArray, greenArray, blueArray] = new Array(new Array(), new Array(), new Array());
+    const [redArray, greenArray, blueArray] = [[], [], []];
     const imageBufferData = CanvasRef.current.getContext("2d").getImageData(0,0,224,224).data;
     
     for (let i = 0; i < imageBufferData.length; i += 4) {

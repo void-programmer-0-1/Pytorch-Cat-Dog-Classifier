@@ -2,6 +2,7 @@ const CACHE_NAME = "version-1";
 const urlsToCache = ["index.html","offline.html"];
 
 const self = this;
+let deferredPrompt;
 
 self.addEventListener("install",(event) => {
     event.waitUntil(
