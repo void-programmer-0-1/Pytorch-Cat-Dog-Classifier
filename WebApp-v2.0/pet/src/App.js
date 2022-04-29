@@ -10,16 +10,23 @@ import Showresult from './utils/showResult'
 
 export default function App() {
 
-	const CanvasRef = useRef();
+	const CanvasRef1 = useRef();
+	const CanvasRef2 = useRef();
 	const [prediction,setprediction] = useState(null);
 
 	function drawCanvas(img){
-		const canvas = CanvasRef.current.getContext("2d");
+		const canvas1 = CanvasRef1.current.getContext("2d");
+		const canvas2 = CanvasRef2.current.getContext("2d");
 		const url = URL.createObjectURL(img);
-		const image = new Image(224,224);
-		image.src = url;
-		image.onload = function(){
-			canvas.drawImage(image,0,0,224,224);
+		const image1 = new Image(224,224);
+		const image2 = new Image(500,400);
+		image1.src = url;
+		image2.src = url;
+		image1.onload = function(){
+			canvas1.drawImage(image1,0,0,224,224);
+		}
+		image2.onload = function(){
+			canvas2.drawImage(image2,0,0,500,400);
 		}
 	}
 
@@ -44,7 +51,8 @@ export default function App() {
 
     	<Container>
 			<div id="canvas-container">
-				<canvas id="canvas-image" width={224} height={224} ref={CanvasRef}></canvas>
+				<canvas id="canvas-image" width={224} height={224} ref={CanvasRef1}></canvas>
+				<canvas width={500} height={400} ref={CanvasRef2}></canvas>
 			</div>
 		</Container>
 
@@ -63,7 +71,7 @@ export default function App() {
 					</div>
 					<div className="result-btn">
 						<Button id="predict-btn" onClick={async () => {
-								const inputTensor = Preprocessing(CanvasRef);
+								const inputTensor = Preprocessing(CanvasRef1);
 								await predict(inputTensor).then((prediction) => {
 									setprediction(argmax(prediction.output.data));
 								})

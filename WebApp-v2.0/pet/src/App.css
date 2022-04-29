@@ -71,4 +71,6 @@ input[type="file"]{
     color: white;
 }
 
-
+#canvas-image{
+    display: none;
+}
