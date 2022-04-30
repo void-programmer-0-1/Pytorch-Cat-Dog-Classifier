@@ -18,5 +18,9 @@ if file:
     st.image(image, channels="BGR",width=400)
 
 if st.button('Predict'):
-    predited = predict(image)
-    st.write(classes[predited])
+    if image is not None:
+        predited = predict(image)
+        st.write(classes[predited])
+    else:
+        st.write("select an image")
+        
