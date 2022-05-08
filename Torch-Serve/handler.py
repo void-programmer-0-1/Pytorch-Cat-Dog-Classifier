@@ -1,7 +1,8 @@
 import torch
 import torchvision.transforms as transforms
-import os
 from ts.torch_handler.base_handler import BaseHandler
+
+import os
 import io
 from PIL import Image
 
